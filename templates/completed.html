@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Completed Appointments{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+    <h3 class="text-center mb-4">Completed Appointments</h3>
+
+    {% if records %}
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>CID</th>
+                <th>PID</th>
+                <th>Doctor</th>
+                <th>Patient Name</th>
+                <th>Disease</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Feedback</th>
+                {% if current_user.usertype == 'Patient' %}
+                    <th>Action</th>
+                {% endif %}
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for r in records %}
+            <tr>
+                <td>{{ r.cid }}</td>
+                <td>{{ r.pid }}</td>
+                <td>{{ r.doctor }}</td>
+                <td>{{ r.patient_name }}</td>
+                <td>{{ r.disease }}</td>
+                <td>{{ r.dept }}</td>
+                <td>{{ r.date }}</td>
+                <td>{{ r.time }}</td>
+
+                <td>
+                    {% if r.feedback %}
+                        {{ r.feedback }}
+                    {% else %}
+                        <span class="text-muted">No feedback</span>
+                    {% endif %}
+                </td>
+
+                {% if current_user.usertype == 'Patient' %}
+                    <td>
+                        {% if not r.feedback %}
+                            <a href="/feedback/{{ r.cid }}" class="btn btn-sm btn-info">
+                                Add Feedback
+                            </a>
+                        {% else %}
+                            <span class="text-success">Completed</span>
+                        {% endif %}
+                    </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% else %}
+        <h5 class="text-center text-muted">No completed appointments yet.</h5>
+    {% endif %}
+</div>
+
+{% endblock %}

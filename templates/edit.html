@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Booking{% endblock %}
+
+{% block body %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h4 class="text-center text-white bg-success py-2 rounded">
+                Update Booking
+            </h4>
+
+            <form action="/edit/{{ posts.pid }}" method="post" class="p-4 shadow bg-white rounded">
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" value="{{ posts.email }}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" value="{{ posts.name }}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select name="gender" class="form-control">
+                        <option selected>{{ posts.gender }}</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Slot</label>
+                    <select name="slot" class="form-control">
+                        <option selected>{{ posts.slot }}</option>
+                        <option>morning</option>
+                        <option>evening</option>
+                        <option>night</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Time</label>
+                    <input type="time" name="time" value="{{ posts.time }}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" name="date" value="{{ posts.date }}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Disease</label>
+                    <input type="text" name="disease" value="{{ posts.disease }}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Department</label>
+                    <input type="text" name="dept" value="{{ posts.dept }}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="number" name="number" value="{{ posts.number }}" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-warning btn-block">
+                    Update Booking
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

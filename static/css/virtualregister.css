@@ -1,0 +1,131 @@
+/* General Section Styling */
+.section-title {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Pricing Row */
+.pricing .row {
+    padding-top: 10px;
+}
+
+/* Card Styling */
+.card {
+    margin-top: 30px;
+    border-radius: 12px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #8893c6 0%, #b4bbf0 100%);
+    color: #333;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Background Styling */
+.bg-dark {
+    background-color: #00203f;
+    background-image: linear-gradient(135deg, #00203f 0%, #4b79a1 100%);
+    color: white;
+}
+
+/* Form Labels */
+label {
+    color: #ffffff;
+    margin-top: 15px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Jumbotron */
+.jumbotron {
+    background-color: #7982a9;
+    background-image: linear-gradient(135deg, #748dbc 0%, #628494 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Input Fields */
+.form-group input,
+option {
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-bottom: 2px solid #5f758c;
+    outline: none;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding: 10px 12px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dropdown Fields */
+#gender, #slot, #dept {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Input Hover */
+.form-group input:hover,
+option:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button Styling */
+#btn {
+    background-color: #5a5b85;
+    background-image: linear-gradient(135deg, #577596 0%, #565691 100%);
+    border-radius: 15px;
+    border: none;
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+#btn:hover {
+    background-color: #fff;
+    color: #343a51;
+    border: 2px solid #2b2f44;
+}
+
+/* Alert Messages */
+.alert {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+    background: #ffe6e6;
+    color: #bdd3ff;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}

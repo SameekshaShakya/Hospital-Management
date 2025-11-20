@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor Profile{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+    <h3 class="text-center mb-4">Doctor Profile</h3>
+
+    <div class="card p-3 mb-4">
+        <h4>{{ current_user.username }}</h4>
+        <p><strong>Email:</strong> {{ current_user.email }}</p>
+        <p><strong>Department(s):</strong></p>
+
+        <ul>
+            {% for d in feedbacks %}
+                <li>{{ d.dept }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <h4 class="mb-3">Feedback Received</h4>
+
+    {% if feedbacks %}
+        {% for f in feedbacks %}
+            <div class="card p-3 mb-3">
+                <p><strong>Patient:</strong> {{ f.patient_name }}</p>
+                <p><strong>Disease:</strong> {{ f.disease }}</p>
+                <p><strong>Date:</strong> {{ f.date }}</p>
+
+                {% if f.feedback %}
+                    <p><strong>Feedback:</strong> {{ f.feedback }}</p>
+                {% else %}
+                    <p class="text-muted">No feedback yet</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="text-center text-muted">No feedback available.</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}
